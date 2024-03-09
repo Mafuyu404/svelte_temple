@@ -15,6 +15,7 @@
   let selectTag = [];
   let searchKey = "";
   $: source = display == "role" ? $role : $dustbin;
+  setting.subscribe(settingApply);
 
   readData();
   settingApply();
