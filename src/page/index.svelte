@@ -35,10 +35,6 @@
           display: "回收站",
           handle: (_) => (display = "dustbin"),
         },
-        {
-          display: "设置",
-          handle: (_) => (display = "word"),
-        },
       ];
       if (display != "role") {
         content[0] = {
@@ -50,6 +46,12 @@
         content.push({
           display: "清空回收站",
           handle: clearDustbin,
+        });
+      }
+      if (display == "role") {
+        content.push({
+          display: "设置",
+          handle: (_) => (display = "word"),
         });
       }
       $Admin.menu.content(content).at(e);
@@ -150,7 +152,11 @@
 >
   <div class="bg" bind:this={element_bg}></div>
   {#if display == "role" || display == "dustbin"}
-    <div class="filter">
+    <div
+      class="filter"
+      in:fade={{ duration: 200 }}
+      out:fade={{ duration: 200 }}
+    >
       {#each $tag as t, i (i)}
         <txt
           class={selectTag.includes(i) && "select"}
