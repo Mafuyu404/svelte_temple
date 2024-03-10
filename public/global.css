@@ -68,16 +68,6 @@ input:focus {
 }
 
 @font-face {
-	font-family: title;
-	src: url("/fonts/ChillRoundGothic_Medium.otf");
-}
-
-@font-face {
-	font-family: remark;
-	src: url("/fonts/站酷仓耳渔阳体-W03.ttf");
-}
-
-@font-face {
 	font-family: normal;
 	src: url("/fonts/SanJiSuXianJianTi-2.ttf");
 }
