@@ -11,6 +11,10 @@
 	-o-box-sizing: border-box;
 	box-sizing: border-box;
 }
+* ::selection {
+	background-color: #888;
+	color: white;
+}
 
 html,
 body {
