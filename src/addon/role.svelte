@@ -49,11 +49,12 @@
   });
   function addTag(e) {
     let content = $tag
-      .filter((_, i) => !role.tag.includes(i))
-      .map((t, i) => {
+      .map((_, i) => i)
+      .filter((i) => !role.tag.includes(i))
+      .map((t) => {
         return {
-          display: t,
-          handle: (_) => role.tag.push(i),
+          display: $tag[t],
+          handle: (_) => role.tag.push(t),
         };
       });
     setTimeout((_) => $Admin.menu.content(content).at(e));
@@ -127,11 +128,7 @@
     <txt class="title" in:fade={{ duration: 200 }} out:fade={{ duration: 200 }}
       >相关剧情</txt
     >
-    <div
-      class="story"
-      in:fade={{ duration: 200 }}
-      out:fade={{ duration: 200 }}
-    >
+    <div class="story" in:fade={{ duration: 200 }} out:fade={{ duration: 200 }}>
       <textarea class="container" bind:value={role.story}></textarea>
     </div>
   {/if}
