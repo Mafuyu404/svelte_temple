@@ -8,6 +8,7 @@
   const color = ["red", "green", "blue", "purple", "yellow", "pink", "orange"];
   let Setting = {};
   let element_bg;
+  let element_role;
   let display = "role";
   const banList = {
     byKey: [],
@@ -150,7 +151,11 @@
   in:fade={{ duration: 200 }}
   out:fade={{ duration: 200 }}
 >
-  <div class="bg" bind:this={element_bg}></div>
+  <div
+    class="bg"
+    bind:this={element_bg}
+    on:mousewheel={(e) => element_role.scrollTop += e.deltaY}
+  ></div>
   {#if display == "role" || display == "dustbin"}
     <div
       class="filter"
@@ -183,7 +188,11 @@
         </svg>
       </div>
     </div>
-    <div class="role container" style={Setting["role_amount_of_line"]}>
+    <div
+      class="role container"
+      style={Setting["role_amount_of_line"]}
+      bind:this={element_role}
+    >
       {#each source as r, i (i)}
         {#if !banList.byKey.includes(i)}
           {#if selectTag.isIncludedBy(r.tag)}

@@ -80,7 +80,6 @@
   in:scale={{ duration: 200 }}
   out:scale={{ duration: 200 }}
   bind:this={element_role}
-  on:click={(_) => console.log(role)}
 >
   <div class="index">
     {#each ["preview", "detail", "story"] as key, ii (ii)}
