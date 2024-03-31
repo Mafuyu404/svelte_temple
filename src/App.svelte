@@ -74,6 +74,9 @@
 	Array.prototype.isIncludedBy = function (arr) {
 		return this.filter(i => arr.includes(i)).length == this.length;
 	}
+	Array.prototype.merge = function (arr) {
+		for (let i of arr) this.push(i);
+	}
 	String.prototype.getByteLen = function () {
 		let len = 0;
 		for (let i = 0; i < this.length; i++) {
