@@ -38,7 +38,7 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "mafuyu-svelte-temp-41"
-          entrypoint: "src/main.js"
+          entrypoint: "index.html"
           root: "public"
           
           
