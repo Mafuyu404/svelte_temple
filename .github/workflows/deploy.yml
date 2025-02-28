@@ -37,8 +37,8 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "mafuyu-svelte-temp-41"
-          entrypoint: "index.html"
+          project: "mafuyu-svelte-temp-55"
+          entrypoint: "jsr:@std/http/file-server"
           root: "public"
           
           
